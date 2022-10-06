@@ -69,7 +69,7 @@ class CPU(QWidget):
         self.lcd2.setDigitCount(4)
         self.lcd2.setFrameStyle(0)
 
-        self.label0 = QLabel("SySuSe (%)")
+        self.label0 = QLabel("CPU (%)")
         self.label1 = QLabel("Freq. (GHz):")
         self.label2 = QLabel("Memory (%):")
 
