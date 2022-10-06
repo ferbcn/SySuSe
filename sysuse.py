@@ -57,7 +57,7 @@ class CPU(QWidget):
         self.icon = QIcon("cpu_bw.png")
         self.tray_icon = SystemTrayIcon(self.icon, parent=self)
 
-        self.setGeometry(0, 0, 150, 130)
+        self.setGeometry(0, 0, 150, 200)
         self.setWindowTitle('SySuSe')
         # self.show()
 
@@ -69,23 +69,17 @@ class CPU(QWidget):
         self.lcd2.setDigitCount(4)
         self.lcd2.setFrameStyle(0)
 
-        self.label0 = QLabel("CPU (%)")
+        self.label0 = QLabel("CPU (%):")
         self.label1 = QLabel("Freq. (GHz):")
         self.label2 = QLabel("Memory (%):")
 
         vbox = QVBoxLayout()
 
-        hbox0 = QHBoxLayout ()
-        hbox0.addWidget(self.label0)
-        hbox0.addWidget(self.lcd0)
+        vbox.addWidget(self.label0)
+        vbox.addWidget(self.lcd0)
+        vbox.addWidget(self.label2)
+        vbox.addWidget(self.lcd2)
 
-        hbox2 = QHBoxLayout ()
-        hbox2.addWidget (self.label2)
-        hbox2.addWidget (self.lcd2)
-
-        vbox.addLayout (hbox0)
-        # vbox.addLayout (hbox1)
-        vbox.addLayout (hbox2)
         self.setLayout(vbox)
 
         timer = QTimer(self)
